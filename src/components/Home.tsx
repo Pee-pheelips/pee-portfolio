@@ -13,51 +13,81 @@ import {
 	faLinkedin,
 	faTwitter,
 	faWhatsapp,
+	faMailchimp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideBar from "./Navbar/Sidebar";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function () {
 	return (
 		<>
-			<Flex alignItems={"center"}>
+			<Flex
+				display={"column"}
+				maxH={"90vh"}
+			>
 				<Box>
 					{" "}
 					<Box>
-						<Heading size={{ base: "4xl", md: "2xl" }} color={"white"}>
+						<Heading
+							size={{
+								base: "2xl",
+								md: "2xl",
+							}}
+							fontWeight={"extrabold"}
+							color={"#e2e8f0"}
+						>
 							Paul Philip
 						</Heading>
 
 						<Text
 							fontSize={"xl"}
-							mt={"4"}
+							mt={"2"}
 							color={"white"}
 							fontWeight={"semibold"}
 						>
-							Front End Engineer at Cragpay
+							Front End Engineer at
+							Cragpay
 						</Text>
 					</Box>
 					<Box mt={"2"}>
-						<Text fontSize={"lg"}>
-							This book could not have happened the way it has without the
-							unique energies and perspectives of Tom
+						<Text>
+							This book could not have
+							happened the way it has
+							without the unique
+							energies and perspectives.
 						</Text>
 					</Box>
 					{/* ------------------sidebar-------------------- */}
 					<SideBar />
-					{/* ------------------socials-------------------- */}
-					<Flex
-						alignContent={"center"}
-						height={"30px"}
-						justifyContent={"space-between"}
-						maxW={"40%"}
-						mt={"40"}
-					>
-						<FontAwesomeIcon icon={faGithub} fontSize={"2xs"} />
-						<FontAwesomeIcon icon={faWhatsapp} />
-						<FontAwesomeIcon icon={faTwitter} />
-						<FontAwesomeIcon icon={faLinkedin} />
-					</Flex>
+				</Box>
+				{/* ------------------socials-------------------- */}
+				<Box
+					alignSelf={"baseline"}
+					marginTop={{
+						md: "12rem",
+						base: "2rem",
+					}}
+					height={"26px"}
+					justifyContent={
+						"space-between"
+					}
+					maxW={"42%"}
+					display={"flex"}
+				>
+					<FontAwesomeIcon
+						icon={faGithub}
+					/>
+					{/* <FontAwesomeIcon icon={faEnvelope} /> */}
+					<FontAwesomeIcon
+						icon={faWhatsapp}
+					/>
+					<FontAwesomeIcon
+						icon={faTwitter}
+					/>
+					<FontAwesomeIcon
+						icon={faLinkedin}
+					/>
 				</Box>
 			</Flex>
 		</>
