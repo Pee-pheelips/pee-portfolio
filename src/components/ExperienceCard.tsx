@@ -11,37 +11,41 @@ import {
 } from "@chakra-ui/react";
 
 export default function ExperienceCard() {
-	let useThis;
+	
 	const experience = [
 		{
 			position: "Frontend Engineer",
 			company: "Cragpay",
 			startDate: "2018",
 			endDate: "2022",
-			tools: [
-				"Typescript",
-				"ChakraUI",
-				"NextJs",
-				"React",
-				"AWS",
-				"GraphQL",
-			],
+			tools: ["Typescript", "ChakraUI", "NextJs", "React", "AWS", "GraphQL", "Framer motion"],
+			descripton:
+				"This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+		},
+		{
+			position: "Frontend Developer",
+			company: "Eduvacity",
+			startDate: "DEC '18",
+			endDate: "2022",
+			tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
 			descripton:
 				"This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
 		},
 		{
 			position: "Frontend Engineer",
-			company: "Cragpay",
+			company: "SurePlug",
 			startDate: "2018",
 			endDate: "2022",
+			tools: ["PHP", "Bootstrap", "MySQL"],
 			descripton:
 				"This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
 		},
 		{
 			position: "Frontend Engineer",
-			company: "Cragpay",
-			startDate: "2018",
+			company: "Pinnacle ICTs",
+			startDate: "2021",
 			endDate: "2022",
+			tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
 			descripton:
 				"This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
 		},
@@ -50,49 +54,36 @@ export default function ExperienceCard() {
 		<>
 			{experience.map((experiences) => (
 				<Box
-					p={{ md: "10", base: "1" }}
-					py={{ base: "6", md: "0" }}
+					p={{ md: "8", base: "1" }}
+					py={{ base: "6", md: "4" }}
 					mb={"1rem"}
 					_hover={{
-						backgroundColor:
-							"rgba(255, 255, 255, 0.02)",
-						borderTop:
-							"1px solid #112c3d",
-						shadow: "md",
-						backdropFilter:
-							"blur(0.4px)",
-						borderRadius: "12px",
+						backgroundColor: " rgba( 20, 100, 150, 0.10 )",
+						boxShadow:"2 1px 32px 1 rgba(75, 255, 248, 0.02)",
+						backdropFilter: "Blur (2px)",
+						borderRadius: "10px",
 					}}
 				>
-					<Flex
-						justifyContent={
-							"space-between"
-						}
-						fontSize={"medium"}
-						display={{
-							base: "column",
-							md: "row",
-						}}
-					>
+					<Flex justifyContent={"space-between"} fontSize={"medium"} flexDir={{base:"column", md:"row"}}>
 						<Box
 							w={{
 								base: "auto",
 								md: "20%",
 							}}
+						
 						>
 							<Text
 								mb={{
 									base: "2",
 									md: "0",
 								}}
-								fontSize={"md"}
+								fontSize={{base:"md", md:"sm"}}
 								fontWeight={{
 									base: "normal",
-									md: "semibold",
+									md: "normal",
 								}}
 							>
-								{experiences.startDate}{" "}
-								- {experiences.endDate}
+								{experiences.startDate} - {experiences.endDate}
 							</Text>
 						</Box>
 						<Spacer />
@@ -108,43 +99,29 @@ export default function ExperienceCard() {
 								fontSize={"lg"}
 								color={"white"}
 							>
-								{experiences.position} .{" "}
-								{experiences.company}
+								{experiences.position} . {experiences.company}
 							</Text>
 							<Text mt={"2"} mb="4">
 								{experiences.descripton}
 							</Text>
-							<Flex
-								gap={"5px"}
-								wrap={"wrap"}
-							>
-								{experiences.tools?.map(
-									(tool) => (
-										<Box
-											w={"fit-content"}
-											bgColor={
-												"#132c3d"
-											}
-											px={"2"}
-											borderRadius={
-												"full"
-											}
-											py={1}
+							<Flex gap={"5px"} wrap={"wrap"}>
+								{experiences.tools?.map((tool) => (
+									<Box
+										w={"fit-content"}
+										bgColor={"#132c3d"}
+										px={"2"}
+										borderRadius={"full"}
+										py={1}
+									>
+										<Text
+											color={"#47b3ae"}
+											fontSize={"sm"}
+											fontWeight={"semibold"}
 										>
-											<Text
-												color={
-													"#47b3ae"
-												}
-												fontSize={"sm"}
-												fontWeight={
-													"semibold"
-												}
-											>
-												{tool}
-											</Text>
-										</Box>
-									)
-								)}
+											{tool}
+										</Text>
+									</Box>
+								))}
 							</Flex>
 						</Box>
 					</Flex>

@@ -26,7 +26,7 @@ export default function Home() {
 				<Box
 					width={{
 						base: "100%",
-						md: "40%",
+						md: "37%",
 					}}
 					height={"100vh"}
 					position={"sticky"}
@@ -38,13 +38,15 @@ export default function Home() {
 				<Box
 					width={{
 						base: "100%",
-						md: "50%",
+						md: "55%",
 					}}
 					fontSize={"lg"}
 					mt={{ base: "7rem", md: "0" }}
 				>
 					{/* ---------About-------- */}
-					<About />
+					<Box pl={{md:"10", base:"0"}}>
+						<About />
+					</Box>
 
 					{/* ----------Experience------- */}
 					<Box>
