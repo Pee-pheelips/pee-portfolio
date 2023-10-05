@@ -55,7 +55,7 @@ export default function () {
 							This book could not have
 							happened the way it has
 							without the unique
-							energies and perspectives.
+							energies.
 						</Text>
 					</Box>
 					{/* ------------------sidebar-------------------- */}
@@ -65,14 +65,14 @@ export default function () {
 				<Box
 					alignSelf={"baseline"}
 					marginTop={{
-						md: "12rem",
+						md: "9rem",
 						base: "2rem",
 					}}
-					height={"26px"}
+					height={"22px"}
 					justifyContent={
 						"space-between"
 					}
-					maxW={"42%"}
+					maxW={"35%"}
 					display={"flex"}
 				>
 					<FontAwesomeIcon

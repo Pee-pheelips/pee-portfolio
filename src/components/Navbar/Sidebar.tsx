@@ -14,7 +14,7 @@ export default function SideBar() {
 				fontWeight={"bold"}
 			>
 				{menu.map((menuList: any, index: number) => (
-					<Flex key={index} mt={"4"}>
+					<Flex key={index} mt={"2"}>
 						<Box
 							display={"flex"}
 							alignItems={"center"}
