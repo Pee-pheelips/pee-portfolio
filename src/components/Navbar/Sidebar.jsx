@@ -2,19 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { Box, Flex, useStyleConfig, Text, HStack } from "@chakra-ui/react";
 
-interface MenuItem {
-  id: any;
-  title: string;
-}
+const MenuList = ({ menuItems }) => {
+  const [activeMenuItem, setActiveMenuItem] = useState("about"); // Initialize with "about"
 
-interface MenuListProps {
-  menuItems: MenuItem[];
-}
-
-const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
-  const [activeMenuItem, setActiveMenuItem] = useState<string | null>("about"); // Initialize with "about"
-
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +13,7 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
 
       menuItems.forEach((menuItem) => {
         const sectionId = `#${menuItem.id}`;
-        const section = document.querySelector(sectionId) as HTMLElement;
+        const section = document.querySelector(sectionId);
 
         if (section) {
           const sectionTop = section.offsetTop;
@@ -42,9 +33,9 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
     };
   }, [menuItems]);
 
-  const scrollToMenuItem = (id: string) => {
+  const scrollToMenuItem = (id) => {
     const sectionId = `#${id}`;
-    const section = document.querySelector(sectionId) as HTMLElement;
+    const section = document.querySelector(sectionId);
 
     if (section) {
       window.scrollTo({

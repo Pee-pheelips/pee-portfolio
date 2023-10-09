@@ -1,21 +1,12 @@
-// app/layout.tsx
-"use client";
-import { useState } from "react";
-import { Box, Container, ColorModeScript, theme } from "@chakra-ui/react";
+import React from "react";
+import { Box, Container } from "@chakra-ui/react";
 import { Providers } from "./providers";
 
-// import Theme from "./theme";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <Providers>
-          
           <Box
             fontSize={{
               base: "normal",

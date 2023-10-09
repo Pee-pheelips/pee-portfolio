@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 
-interface CursorPosition {
-  x: number;
-  y: number;
-}
-
-const CursorFollowingBackground: React.FC = () => {
-  const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
+const CursorFollowingBackground = () => {
+  const [cursorPosition, setCursorPosition] = useState({
     x: 0,
     y: 0,
   });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       setCursorPosition({ x: clientX, y: clientY });
     };

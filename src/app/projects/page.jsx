@@ -3,11 +3,7 @@ import HeadingNav from "../../components/Navbar/HeadingNav";
 import ProjectCard from "../../components/ProjectCard";
 import { Box } from "@chakra-ui/react";
 
-interface Props {
-  id: string;
-}
-
-const Project: React.FC<Props> = ({ id }) => {
+const Project = ({ id }) => {
   return (
     <>
       <Box id={id}>

@@ -2,11 +2,8 @@
 import { Box, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-interface HeadingNavProps {
-  name: string;
-}
 
-export default function HeadingNav({ name }: HeadingNavProps) {
+export default function HeadingNav({ name }) {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {

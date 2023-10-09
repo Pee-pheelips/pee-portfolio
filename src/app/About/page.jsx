@@ -1,12 +1,8 @@
 import React from "react";
 import { Text, Box } from "@chakra-ui/react";
-import HeadingNav from "@src/components/Navbar/HeadingNav";
+import HeadingNav from "../../components/Navbar/HeadingNav";
 
-interface AboutProps {
-  name?: string;
-}
-
-const About: React.FC<AboutProps> = ({ name }) => {
+const About = ({ name }) => {
   return (
     <>
       <Box id={name} key={name}>

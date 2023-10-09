@@ -66,13 +66,13 @@ export default function ProjectCard() {
   // Create an array of boolean states, one for each menu item
   const [isHovered, setIsHovered] = useState(projects.map(() => false));
 
-  const handleMouseEnter = (index: any) => {
+  const handleMouseEnter = (index) => {
     const newHoveredStates = [...isHovered];
     newHoveredStates[index] = true;
     setIsHovered(newHoveredStates);
   };
 
-  const handleMouseLeave = (index: any) => {
+  const handleMouseLeave = (index) => {
     const newHoveredStates = [...isHovered];
     newHoveredStates[index] = false;
     setIsHovered(newHoveredStates);
@@ -153,7 +153,7 @@ export default function ProjectCard() {
                   {project.descripton}
                 </Text>
                 <Flex gap={"5px"} wrap={"wrap"}>
-                  {project.tools?.map((tool, index: any) => (
+                  {project.tools?.map((tool, index) => (
                     <Box
                       key={index}
                       w={"fit-content"}

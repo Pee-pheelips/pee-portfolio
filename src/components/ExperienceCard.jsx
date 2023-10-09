@@ -63,13 +63,13 @@ export default function ExperienceCard() {
   // Create an array of boolean states, one for each menu item
   const [isHovered, setIsHovered] = useState(experience.map(() => false));
 
-  const handleMouseEnter = (index: any) => {
+  const handleMouseEnter = (index) => {
     const newHoveredStates = [...isHovered];
     newHoveredStates[index] = true;
     setIsHovered(newHoveredStates);
   };
 
-  const handleMouseLeave = (index: any) => {
+  const handleMouseLeave = (index) => {
     const newHoveredStates = [...isHovered];
     newHoveredStates[index] = false;
     setIsHovered(newHoveredStates);
@@ -157,7 +157,7 @@ export default function ExperienceCard() {
                   {experiences.descripton}
                 </Text>
                 <Flex gap={"5px"} wrap={"wrap"}>
-                  {experiences.tools?.map((tool, index: any) => (
+                  {experiences.tools?.map((tool, index) => (
                     <Box
                       key={index}
                       w={"fit-content"}
