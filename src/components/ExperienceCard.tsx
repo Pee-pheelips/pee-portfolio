@@ -103,7 +103,7 @@ export default function ExperienceCard() {
             >
               <Box
                 w={{
-                  base: "auto",
+                  base: "full",
                   md: "20%",
                   lg: "20%",
                 }}

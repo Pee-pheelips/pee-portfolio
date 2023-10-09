@@ -27,7 +27,7 @@ const CursorFollowingBackground = () => {
       width="1000px"
       height="1000px"
       borderRadius="50%"
-      background="radial-gradient(circle, #87ceeb, #00bfff, #0000cd, #000010)"
+      background="radial-gradient(circle, #00ccff, #4169e1, #000024, #000020)"
       transform="translate(-50%, -50%)"
       pointerEvents="none"
       mixBlendMode="luminosity"

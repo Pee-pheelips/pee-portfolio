@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Icon } from "@chakra-ui/react";
 import { useState } from "react";
 
 export default function SideBar() {
@@ -35,6 +35,7 @@ export default function SideBar() {
           alignItems={"center"}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}
+          cursor={isHovered[index] ? "pointer" : "pointer"}
         >
           <Box
             as="div"
@@ -43,7 +44,6 @@ export default function SideBar() {
             transition="background-color 0.3s, color 0.3s"
             height={isHovered[index] ? "1.7px" : "1px"}
             mr={"2"}
-            cursor={isHovered[index] ? "pointer" : "pointer"}
           ></Box>
           <Box
             color={isHovered[index] ? "white" : "gray.500"}
