@@ -1,16 +1,15 @@
-"use client";
-import HeadingNav from "../../components/Navbar/HeadingNav"
+import React from "react";
 import { Text, Box } from "@chakra-ui/react";
-import PropTypes from "prop-types";
+import HeadingNav from "@src/components/Navbar/HeadingNav";
 
-interface StyleProps {
+interface AboutProps {
   name?: string;
 }
 
-const About: React.FC<StyleProps> = ({ name }) => {
+const About: React.FC<AboutProps> = ({ name }) => {
   return (
     <>
-      <Box id={name}>
+      <Box id={name} key={name}>
         <HeadingNav name={"About"} />
         <Text>
           <Text as={"span"} color={"white"} fontWeight={"semibold"}>
@@ -33,10 +32,6 @@ const About: React.FC<StyleProps> = ({ name }) => {
       </Box>
     </>
   );
-};
-
-About.propTypes = {
-  name: PropTypes.string,
 };
 
 export default About;

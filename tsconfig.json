@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true, // Change to false or remove this line
-    "noImplicitThis": true,
+    "noImplicitAny": false, // Change to false or remove this line
+    "noImplicitThis": false,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
