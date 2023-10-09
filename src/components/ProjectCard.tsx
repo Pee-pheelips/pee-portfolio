@@ -1,25 +1,15 @@
 "use client";
-import {
-  Badge,
-  Box,
-  Flex,
-  Icon,
-  Spacer,
-  Tab,
-  TabList,
-  Tabs,
-  Text,
-} from "@chakra-ui/react";
+import { Badge, Box, Flex, Icon, Text, Image } from "@chakra-ui/react";
+
 import { useState } from "react";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 
-export default function ExperienceCard() {
-  const experience = [
+export default function ProjectCard() {
+  const projects = [
     {
       position: "Frontend Engineer",
       company: "Cragpay",
-      startDate: "2018",
-      endDate: "2022",
+      img: "/cragpay.jpg",
       tools: [
         "Typescript",
         "ChakraUI",
@@ -33,35 +23,48 @@ export default function ExperienceCard() {
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
     {
-      position: "Frontend Developer",
-      company: "Eduvacity",
-      startDate: "DEC '18",
-      endDate: "2022",
-      tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
+      position: "Frontend Engineer",
+      company: "Cragpay",
+      img: "/cragpay.jpg",
+
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
     {
       position: "Frontend Engineer",
-      company: "SurePlug",
-      startDate: "2018",
-      endDate: "2022",
-      tools: ["PHP", "Bootstrap", "MySQL"],
+      company: "Cragpay",
+      img: "/cragpay.jpg",
+      tools: [
+        "Typescript",
+        "ChakraUI",
+        "NextJs",
+        "React",
+        "AWS",
+        "GraphQL",
+        "Framer motion",
+      ],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
     {
       position: "Frontend Engineer",
-      company: "Pinnacle ICTs",
-      startDate: "2021",
-      endDate: "2022",
-      tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
+      company: "Cragpay",
+      img: "/cragpay.jpg",
+      tools: [
+        "Typescript",
+        "ChakraUI",
+        "NextJs",
+        "React",
+        "AWS",
+        "GraphQL",
+        "Framer motion",
+      ],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
   ];
   // Create an array of boolean states, one for each menu item
-  const [isHovered, setIsHovered] = useState(experience.map(() => false));
+  const [isHovered, setIsHovered] = useState(projects.map(() => false));
 
   const handleMouseEnter = (index: any) => {
     const newHoveredStates = [...isHovered];
@@ -77,10 +80,10 @@ export default function ExperienceCard() {
   return (
     <>
       <Box>
-        {experience.map((experiences, index) => (
+        {projects.map((project, index) => (
           <Box
             key={index}
-            p={{ md: "0", base: "1", lg: "8" }}
+            p={{ lg: "8", base: "1", md: "0" }}
             py={{ base: "6", md: "4" }}
             mb={"1rem"}
             onMouseEnter={() => handleMouseEnter(index)}
@@ -96,7 +99,7 @@ export default function ExperienceCard() {
             <Flex
               gap={"9px"}
               fontSize={"medium"}
-              flexDir={{ base: "column", md: "row" }}
+              flexDir={{ base: "column-reverse", md: "row" }}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
               cursor={isHovered[index] ? "pointer" : "none"}
@@ -105,23 +108,16 @@ export default function ExperienceCard() {
                 w={{
                   base: "auto",
                   md: "20%",
-                  lg: "20%",
                 }}
+                pr={{ md: "4", base: "0" }}
+                mt={{ md: "1", lg: "2", base: "1" }}
               >
-                <Text
-                  mb={{
-                    base: "2",
-                    md: "0",
-                  }}
-                  color={isHovered[index] ? "gray.400" : "gray.500"}
-                  fontSize={{ base: "md", md: "sm" }}
-                  fontWeight={{
-                    base: "normal",
-                    md: "normal",
-                  }}
-                >
-                  {experiences.startDate} - {experiences.endDate}
-                </Text>
+                <Image
+                  src={project.img}
+                  height={"70"}
+                  width={"100"}
+                  alt="project"
+                />
               </Box>
 
               <Box
@@ -137,7 +133,7 @@ export default function ExperienceCard() {
                   color={isHovered[index] ? "#12e193" : "white"}
                   display={"inline-flex"}
                 >
-                  {experiences.position} . {experiences.company}
+                  {project.position} . {project.company}
                   <Box
                     as="span"
                     pl={isHovered[index] ? 1.5 : 1}
@@ -154,10 +150,10 @@ export default function ExperienceCard() {
                   mb="4"
                   color={isHovered[index] ? "gray.400" : "gray.500"}
                 >
-                  {experiences.descripton}
+                  {project.descripton}
                 </Text>
                 <Flex gap={"5px"} wrap={"wrap"}>
-                  {experiences.tools?.map((tool) => (
+                  {project.tools?.map((tool) => (
                     <Box
                       w={"fit-content"}
                       bgColor={"#112c3d"}
@@ -189,7 +185,7 @@ export default function ExperienceCard() {
             _hover={{ borderBottom: "1px solid #12e193", marginRight: "1" }}
           >
             {" "}
-            View Full Resume
+            View Full Project Archive
           </Text>
           <Box
             as="span"

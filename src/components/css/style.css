@@ -1,10 +1,7 @@
-
-  .circle {
-    position: absolute;
-    width: 100px; /* Adjust the size of the circle as needed */
-    height: 100px; /* Adjust the size of the circle as needed */
-    background-color: #007bff; /* Color of the circle */
-    border-radius: 50%; /* Makes the circle round */
-    transform: translate(-50%, -50%);
-  }
-  
+/* styles.css */
+.custom-cursor {
+  cursor: pointer;
+  background-image: radial-gradient(circle, #ff0000 10%, transparent 10%);
+  background-position: center;
+  background-size: 100% 100%;
+}

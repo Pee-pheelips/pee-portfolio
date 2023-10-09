@@ -1,8 +1,10 @@
+"use client";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Home";
 import { Box, Flex, Spacer } from "@chakra-ui/react";
 import Experience from "./experience/page";
 import About from "./About/page";
+import Projects from "./projects/page";
 export default function Home() {
   return (
     <>
@@ -10,30 +12,37 @@ export default function Home() {
         alignContent={"center"}
         flexDir={{
           base: "column",
-          md: "row",
+          md: "column",
+          lg: "row",
         }}
       >
         <Box
-          width={{ base: "100%", md: "28%" }}
-          height={"100vh"}
-          position={{base:"relative", md:"fixed"}}
+          width={{ base: "100%", md: "100%", lg: "30%" }}
+          position={{ base: "relative", md: "relative", lg: "fixed" }}
         >
           <Hero />
         </Box>
         <Spacer />
         <Box
-          width={{ base: "100%", md: "55%" }}
+          width={{ base: "100%", md: "100%", lg: "55%" }}
           fontSize={"lg"}
           mt={{ base: "0rem", md: "0" }}
         >
           {/* ---------About-------- */}
-          <Box pl={{ md: "10", base: "0" }}>
+          <Box
+            pl={{ md: "0", base: "0", lg: "10" }}
+            mt={{ md: "5rem", base: "7rem", lg: "auto" }}
+          >
             <About />
           </Box>
 
           {/* ----------Experience------- */}
-          <Box>
+          <Box marginTop={{ md: "7rem", base: "5rem" }}>
             <Experience />
+          </Box>
+          {/* ------Projects------- */}
+          <Box marginTop={{ md: "7rem", base: "5rem" }}>
+            <Projects />
           </Box>
         </Box>
       </Flex>

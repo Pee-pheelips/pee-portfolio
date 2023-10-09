@@ -1,8 +1,10 @@
+import HeadingNav from "@/components/Navbar/HeadingNav";
 import { Text, Box } from "@chakra-ui/react";
 export default function About() {
-	return (
+  return (
     <>
       <Box>
+        <HeadingNav name={"About"} />
         <Text>
           <Text as={"span"} color={"white"} fontWeight={"semibold"}>
             Advertising agency
