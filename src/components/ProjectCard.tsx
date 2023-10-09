@@ -153,8 +153,9 @@ export default function ProjectCard() {
                   {project.descripton}
                 </Text>
                 <Flex gap={"5px"} wrap={"wrap"}>
-                  {project.tools?.map((tool) => (
+                  {project.tools?.map((tool, index: any) => (
                     <Box
+                      key={index}
                       w={"fit-content"}
                       bgColor={"#112c3d"}
                       px={"2"}

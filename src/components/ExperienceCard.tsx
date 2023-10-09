@@ -157,8 +157,9 @@ export default function ExperienceCard() {
                   {experiences.descripton}
                 </Text>
                 <Flex gap={"5px"} wrap={"wrap"}>
-                  {experiences.tools?.map((tool) => (
+                  {experiences.tools?.map((tool, index: any) => (
                     <Box
+                      key={index}
                       w={"fit-content"}
                       bgColor={"#112c3d"}
                       px={"2"}

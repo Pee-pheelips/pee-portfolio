@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Flex, useStyleConfig, Text, HStack } from "@chakra-ui/react";
 
 interface MenuItem {
-  id: string;
+  name: any;
   title: string;
 }
 
@@ -21,7 +21,7 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
       const scrollY = window.scrollY;
 
       menuItems.forEach((menuItem) => {
-        const sectionId = `#${menuItem.id}`;
+        const sectionId = `#${menuItem.name}`;
         const section = document.querySelector(sectionId) as HTMLElement;
 
         if (section) {
@@ -29,7 +29,7 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
           const sectionBottom = sectionTop + section.clientHeight;
 
           if (scrollY >= sectionTop && scrollY < sectionBottom) {
-            setActiveMenuItem(menuItem.id);
+            setActiveMenuItem(menuItem.name);
           }
         }
       });
@@ -42,8 +42,8 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
     };
   }, [menuItems]);
 
-  const scrollToMenuItem = (id: string) => {
-    const sectionId = `#${id}`;
+  const scrollToMenuItem = (name: string) => {
+    const sectionId = `#${name}`;
     const section = document.querySelector(sectionId) as HTMLElement;
 
     if (section) {
@@ -51,7 +51,7 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
         top: section.offsetTop,
         behavior: "smooth",
       });
-      setActiveMenuItem(id);
+      setActiveMenuItem(name);
     }
   };
 
@@ -72,49 +72,54 @@ const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
     >
       {menuItems.map((menuItem) => (
         <Flex
-          key={menuItem.id}
+          key={menuItem.name}
           mt={"5"}
           alignItems={"center"}
-          onClick={() => scrollToMenuItem(menuItem.id)}
+          onClick={() => scrollToMenuItem(menuItem.name)}
           sx={hoverStyle}
-          onMouseEnter={() => setHoveredItem(menuItem.id)}
+          onMouseEnter={() => setHoveredItem(menuItem.name)}
           onMouseLeave={() => setHoveredItem(null)}
         >
           <HStack>
             <Box
               as="div"
               bgColor={
-                activeMenuItem === menuItem.id
+                activeMenuItem === menuItem.name
                   ? "white"
-                  : hoveredItem === menuItem.id
+                  : hoveredItem === menuItem.name
                   ? "white"
                   : "gray.500"
               }
               width={
-                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                activeMenuItem === menuItem.name ||
+                hoveredItem === menuItem.name
                   ? "14"
                   : "7"
               }
               transition="background-color 0.3s, color 0.3s"
               height={
-                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                activeMenuItem === menuItem.name ||
+                hoveredItem === menuItem.name
                   ? "1.7px"
                   : "1px"
               }
               cursor={
-                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                activeMenuItem === menuItem.name ||
+                hoveredItem === menuItem.name
                   ? "pointer"
                   : "pointer"
               }
             ></Box>
             <Text
               color={
-                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                activeMenuItem === menuItem.name ||
+                hoveredItem === menuItem.name
                   ? "white"
                   : "gray.500"
               }
               cursor={
-                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                activeMenuItem === menuItem.name ||
+                hoveredItem === menuItem.name
                   ? "pointer"
                   : "pointer"
               }

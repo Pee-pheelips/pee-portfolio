@@ -19,9 +19,9 @@ import {
 import MenuList from "./Navbar/Sidebar";
 
 const ListItems = [
-  { id: "about", title: "ABOUT" },
-  { id: "experience", title: "EXPERIENCE" },
-  { id: "project", title: "PROJECTS" },
+  { name: "about", title: "ABOUT" },
+  { name: "experience", title: "EXPERIENCE" },
+  { name: "project", title: "PROJECTS" },
 ];
 
 export default function Home() {
