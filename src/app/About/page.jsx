@@ -2,7 +2,7 @@ import React from "react";
 import { Text, Box } from "@chakra-ui/react";
 import HeadingNav from "../../components/Navbar/HeadingNav";
 
-const About = ({ id }) => {
+export default function About({ id }) {
   return (
     <>
       <Box id={id}>
@@ -28,6 +28,4 @@ const About = ({ id }) => {
       </Box>
     </>
   );
-};
-
-export default About;
+}
