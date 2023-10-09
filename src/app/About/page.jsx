@@ -2,10 +2,10 @@ import React from "react";
 import { Text, Box } from "@chakra-ui/react";
 import HeadingNav from "../../components/Navbar/HeadingNav";
 
-const About = ({ name }) => {
+const About = ({ id }) => {
   return (
     <>
-      <Box id={name} key={name}>
+      <Box id={id}>
         <HeadingNav name={"About"} />
         <Text>
           <Text as={"span"} color={"white"} fontWeight={"semibold"}>

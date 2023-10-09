@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
-import { Providers } from "./providers";
+import Providers from "./providers";
 
 export default function RootLayout({ children }) {
   return (
