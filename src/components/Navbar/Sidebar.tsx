@@ -31,7 +31,7 @@ export default function SideBar() {
       {menu.map((menuList, index) => (
         <Flex
           key={index}
-          mt={"4"}
+          mt={"5"}
           alignItems={"center"}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}

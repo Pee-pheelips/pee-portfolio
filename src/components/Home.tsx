@@ -22,7 +22,7 @@ export default function () {
   const iconHover = { cursor: "pointer", color: "white" };
   return (
     <>
-      <Box minH={{ lg: "100vh", base: "18vh", md: "18vh" }}>
+      <Box minH={{ lg:"50vh", base: "18vh", md: "18vh" }}>
         <Flex display={"column"} gap={"10px"}>
           <Box minH={{ md: "0", lg: "79vh", base: "0" }}>
             {" "}

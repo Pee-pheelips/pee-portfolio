@@ -5,6 +5,7 @@ import { Box, Flex, Spacer } from "@chakra-ui/react";
 import Experience from "./experience/page";
 import About from "./About/page";
 import Projects from "./projects/page";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function Home() {
           width={{ base: "100%", md: "100%", lg: "55%" }}
           fontSize={"lg"}
           mt={{ base: "0rem", md: "0" }}
+          position={"relative"}
         >
           {/* ---------About-------- */}
           <Box
@@ -41,8 +43,12 @@ export default function Home() {
             <Experience />
           </Box>
           {/* ------Projects------- */}
-          <Box marginTop={{ md: "7rem", base: "5rem" }}>
+          <Box marginTop={{ md: "7rem", base: "5rem" }} mb={"2rem"}>
             <Projects />
+          </Box>
+
+          <Box>
+            <Footer />
           </Box>
         </Box>
       </Flex>

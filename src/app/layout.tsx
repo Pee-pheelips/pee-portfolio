@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
+          
           <Box
             fontSize={{
               base: "normal",

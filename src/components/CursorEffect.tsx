@@ -6,10 +6,9 @@ const CursorFollowingBackground = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e:any) => {
       const { clientX, clientY } = e;
-      const { scrollX, scrollY } = window;
-      setCursorPosition({ x: clientX + scrollX, y: clientY + scrollY });
+      setCursorPosition({ x: clientX, y: clientY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -21,18 +20,28 @@ const CursorFollowingBackground = () => {
 
   return (
     <Box
-      position="absolute" // Change from "absolute" to "fixed"
-      top={cursorPosition.y + "px"}
-      left={cursorPosition.x + "px"}
-      width="1000px"
-      height="1000px"
-      borderRadius="50%"
-      background="radial-gradient(circle, #00ccff, #4169e1, #000024, #000020)"
-      transform="translate(-50%, -50%)"
+      position="fixed"
+      top="0"
+      left="0"
+      width="100%"
+      height="100%"
       pointerEvents="none"
-      mixBlendMode="luminosity"
-      opacity="0.1"
-    />
+    >
+      <Box
+        width="1000px"
+        height="1000px"
+        borderRadius="50%"
+        background="radial-gradient(circle, #00ccff, #4169e1, #000024, #000020)"
+        transform={`translate(${cursorPosition.x - 500}px, ${
+          cursorPosition.y - 500
+        }px)`}
+        style={{
+          position: "absolute",
+          mixBlendMode: "luminosity",
+          opacity: "0.1",
+        }}
+      />
+    </Box>
   );
 };
 
