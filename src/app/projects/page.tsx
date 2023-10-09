@@ -1,5 +1,6 @@
-import HeadingNav from "@/components/Navbar/HeadingNav";
-import ProjectCard from "@/components/ProjectCard";
+"use client";
+import HeadingNav from "../../components/Navbar/HeadingNav";
+import ProjectCard from "../../components/ProjectCard";
 import { Box } from "@chakra-ui/react";
 
 interface Props {

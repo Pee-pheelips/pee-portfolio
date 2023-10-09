@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Box, Container, ColorModeScript, theme } from "@chakra-ui/react";
 import { Providers } from "./providers";
-import CursorFollowingBackground from "@/components/CursorEffect";
+
 // import Theme from "./theme";
 
 export default function RootLayout({

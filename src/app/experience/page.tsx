@@ -1,6 +1,7 @@
+"use client";
 import { Box } from "@chakra-ui/react";
-import ExperienceCard from "@/components/ExperienceCard";
-import HeadingNav from "@/components/Navbar/HeadingNav";
+import ExperienceCard from "../../components/ExperienceCard";
+import HeadingNav from "../../components/Navbar/HeadingNav";
 
 import React from "react";
 

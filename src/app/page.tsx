@@ -1,11 +1,11 @@
 "use client";
 
-import Hero from "@/components/Home";
+import Hero from "../components/Home";
 import { Box, Flex, Spacer } from "@chakra-ui/react";
 import Experience from "./experience/page";
 // import About from "./About/page";
 import Projects from "./projects/page";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
