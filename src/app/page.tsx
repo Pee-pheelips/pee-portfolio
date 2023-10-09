@@ -35,16 +35,16 @@ export default function Home() {
             pl={{ md: "0", base: "0", lg: "10" }}
             mt={{ md: "5rem", base: "7rem", lg: "auto" }}
           >
-            <About />
+            <About id={"about"} />
           </Box>
 
           {/* ----------Experience------- */}
           <Box marginTop={{ md: "7rem", base: "5rem" }}>
-            <Experience />
+            <Experience id="experience" />
           </Box>
           {/* ------Projects------- */}
           <Box marginTop={{ md: "7rem", base: "5rem" }} mb={"2rem"}>
-            <Projects />
+            <Projects id="project" />
           </Box>
 
           <Box>

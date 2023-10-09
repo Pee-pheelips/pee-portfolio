@@ -1,23 +1,64 @@
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
-import { useState } from "react";
+// MenuList.tsx
+import React, { useState, useEffect } from "react";
+import { Box, Flex, useStyleConfig, Text, HStack } from "@chakra-ui/react";
 
-export default function SideBar() {
-  const menu = ["ABOUT", "EXPERIENCE", "PROJECTS"];
+interface MenuItem {
+  id: string;
+  title: string;
+}
 
-  // Create an array of boolean states, one for each menu item
-  const [isHovered, setIsHovered] = useState(menu.map(() => false));
+interface MenuListProps {
+  menuItems: MenuItem[];
+}
 
-  const handleMouseEnter = (index: any) => {
-    const newHoveredStates = [...isHovered];
-    newHoveredStates[index] = true;
-    setIsHovered(newHoveredStates);
+const MenuList: React.FC<MenuListProps> = ({ menuItems }) => {
+  const [activeMenuItem, setActiveMenuItem] = useState<string | null>("about"); // Initialize with "about"
+
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      menuItems.forEach((menuItem) => {
+        const sectionId = `#${menuItem.id}`;
+        const section = document.querySelector(sectionId) as HTMLElement;
+
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.clientHeight;
+
+          if (scrollY >= sectionTop && scrollY < sectionBottom) {
+            setActiveMenuItem(menuItem.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menuItems]);
+
+  const scrollToMenuItem = (id: string) => {
+    const sectionId = `#${id}`;
+    const section = document.querySelector(sectionId) as HTMLElement;
+
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth",
+      });
+      setActiveMenuItem(id);
+    }
   };
 
-  const handleMouseLeave = (index: any) => {
-    const newHoveredStates = [...isHovered];
-    newHoveredStates[index] = false;
-    setIsHovered(newHoveredStates);
-  };
+  const hoverStyle = useStyleConfig("MenuItem", {
+    isActive: activeMenuItem,
+    isHovered: hoveredItem,
+  });
 
   return (
     <Flex
@@ -29,29 +70,62 @@ export default function SideBar() {
       fontWeight={"bold"}
       gap={4}
     >
-      {menu.map((menuList, index) => (
-        <Flex key={index} mt={"5"} alignItems={"center"}>
-          <HStack
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-          >
+      {menuItems.map((menuItem) => (
+        <Flex
+          key={menuItem.id}
+          mt={"5"}
+          alignItems={"center"}
+          onClick={() => scrollToMenuItem(menuItem.id)}
+          sx={hoverStyle}
+          onMouseEnter={() => setHoveredItem(menuItem.id)}
+          onMouseLeave={() => setHoveredItem(null)}
+        >
+          <HStack>
             <Box
               as="div"
-              bgColor={isHovered[index] ? "white" : "gray.500"}
-              width={isHovered[index] ? "14" : "7"}
+              bgColor={
+                activeMenuItem === menuItem.id
+                  ? "white"
+                  : hoveredItem === menuItem.id
+                  ? "white"
+                  : "gray.500"
+              }
+              width={
+                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                  ? "14"
+                  : "7"
+              }
               transition="background-color 0.3s, color 0.3s"
-              height={isHovered[index] ? "1.7px" : "1px"}
-              cursor={isHovered[index] ? "pointer" : "pointer"}
+              height={
+                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                  ? "1.7px"
+                  : "1px"
+              }
+              cursor={
+                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                  ? "pointer"
+                  : "pointer"
+              }
             ></Box>
             <Text
-              color={isHovered[index] ? "white" : "gray.500"}
-              cursor={isHovered[index] ? "pointer" : "pointer"}
+              color={
+                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                  ? "white"
+                  : "gray.500"
+              }
+              cursor={
+                activeMenuItem === menuItem.id || hoveredItem === menuItem.id
+                  ? "pointer"
+                  : "pointer"
+              }
             >
-              {menuList}
+              {menuItem.title}
             </Text>
           </HStack>
         </Flex>
       ))}
     </Flex>
   );
-}
+};
+
+export default MenuList;

@@ -1,9 +1,13 @@
 import HeadingNav from "@/components/Navbar/HeadingNav";
 import { Text, Box } from "@chakra-ui/react";
-export default function About() {
+
+interface Props {
+  id: string;
+}
+const About:React.FC<Props> = ({ id }) => {
   return (
     <>
-      <Box>
+      <Box id={id}>
         <HeadingNav name={"About"} />
         <Text>
           <Text as={"span"} color={"white"} fontWeight={"semibold"}>
@@ -16,6 +20,15 @@ export default function About() {
           </Text>
           , a start-up, a student-led design studio, and a huge corporation.
         </Text>
+        <Text as={"span"} color={"white"} fontWeight={"semibold"}>
+          Advertising agency
+        </Text>{" "}
+        I decided to try my hand at creating custom Tumblr themes and tumbled
+        head first
+        <Text as={"span"} color={"white"} fontWeight={"semibold"}>
+          advertising agency
+        </Text>
+        , a start-up, a student-led design studio, and a huge corporation.
         <Text mt={"3"}>
           {" "}
           2012, I decided to try my hand at reating custom Tumblr themes and
@@ -44,4 +57,6 @@ export default function About() {
       </Box>
     </>
   );
-}
+};
+
+export default About;

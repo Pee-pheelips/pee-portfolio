@@ -1,11 +1,21 @@
 import HeadingNav from "@/components/Navbar/HeadingNav";
 import ProjectCard from "@/components/ProjectCard";
+import { Box } from "@chakra-ui/react";
 
-export default function Projects() {
+interface Props {
+  id: string;
+}
+
+const Project: React.FC<Props> = ({ id }) => {
   return (
     <>
-      <HeadingNav name={"Project"} />
-      <ProjectCard />
+      <Box id={id}>
+        {" "}
+        <HeadingNav name={"Project"} />
+        <ProjectCard />
+      </Box>
     </>
   );
-}
+};
+
+export default Project;

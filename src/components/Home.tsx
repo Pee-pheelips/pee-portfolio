@@ -14,11 +14,17 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaWhatsapp,
 } from "react-icons/fa";
-import SideBar from "./Navbar/Sidebar";
 
-export default function () {
+import MenuList from "./Navbar/Sidebar";
+
+const ListItems = [
+  { id: "about", title: "ABOUT" },
+  { id: "experience", title: "EXPERIENCE" },
+  { id: "project", title: "PROJECTS" },
+];
+
+export default function Home() {
   const iconHover = { cursor: "pointer", color: "white" };
   return (
     <>
@@ -56,7 +62,7 @@ export default function () {
             </Box>
             {/* ------------------sidebar-------------------- */}
             <Box>
-              <SideBar />
+              <MenuList menuItems={ListItems} />
             </Box>
           </Box>
           {/* ------------------socials-------------------- */}
