@@ -10,7 +10,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
         body: {
           margin: 0,
           padding: 0,
-          overflow: "hidden",
+          bgColor: "#000020",
+          color: "gray.500",
         },
       },
     },

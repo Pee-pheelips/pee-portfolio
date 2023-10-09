@@ -114,8 +114,8 @@ export default function ProjectCard() {
               >
                 <Image
                   src={project.img}
-                  height={"70"}
-                  width={"100"}
+                  height={{ md: "70", base: "120" }}
+                  width={{ md: "100", base: "150" }}
                   alt="project"
                 />
               </Box>

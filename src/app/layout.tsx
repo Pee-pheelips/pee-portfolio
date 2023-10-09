@@ -16,8 +16,6 @@ export default function RootLayout({
       <body>
         <Providers>
           <Box
-            bgColor="#000030"
-            color={"gray.500"}
             fontSize={{
               base: "normal",
               md: "lg",
@@ -27,7 +25,6 @@ export default function RootLayout({
               maxW={{
                 md: "6xl",
                 lg: "7xl",
-                base: "4xl",
               }}
               pt={{
                 base: "40px",

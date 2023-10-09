@@ -7,7 +7,9 @@ const CursorFollowingBackground = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: any) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
+      const { clientX, clientY } = e;
+      const { scrollX, scrollY } = window;
+      setCursorPosition({ x: clientX + scrollX, y: clientY + scrollY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -30,7 +32,6 @@ const CursorFollowingBackground = () => {
       pointerEvents="none"
       mixBlendMode="luminosity"
       opacity="0.1"
-    
     />
   );
 };
