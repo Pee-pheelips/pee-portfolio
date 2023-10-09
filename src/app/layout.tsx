@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Box, Container, ColorModeScript, theme } from "@chakra-ui/react";
 import { Providers } from "./providers";
+import CursorFollowingBackground from "@/components/CursorEffect";
 // import Theme from "./theme";
 
 export default function RootLayout({
@@ -15,7 +16,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Box
-            bgGradient="linear(to-br,#000024, #000003)"
+            bgColor="#000030"
             color={"gray.500"}
             fontSize={{
               base: "normal",

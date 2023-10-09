@@ -1,14 +1,27 @@
 // app/providers.tsx
-"use client";
-
 import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import "../components/css/style.css";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
+import CursorFollowingBackground from "@/components/CursorEffect";
 export function Providers({ children }: { children: React.ReactNode }) {
+  const theme = extendTheme({
+    styles: {
+      global: {
+        body: {
+          margin: 0,
+          padding: 0,
+          overflow: "hidden",
+        },
+      },
+    },
+  });
+
   return (
     <CacheProvider>
-      <ChakraProvider>{children}</ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <CursorFollowingBackground />
+        {children}
+      </ChakraProvider>
     </CacheProvider>
   );
 }
