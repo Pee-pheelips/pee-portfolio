@@ -1,4 +1,5 @@
-import HeadingNav from "@/components/Navbar/HeadingNav";
+"use client";
+import HeadingNav from "../../components/Navbar/HeadingNav"
 import { Text, Box } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 

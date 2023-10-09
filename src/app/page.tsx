@@ -1,9 +1,9 @@
 "use client";
-import Navbar from "@/components/Navbar/Navbar";
+
 import Hero from "@/components/Home";
 import { Box, Flex, Spacer } from "@chakra-ui/react";
 import Experience from "./experience/page";
-import About from "./About/page";
+// import About from "./About/page";
 import Projects from "./projects/page";
 import Footer from "@/components/Footer";
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
             pl={{ md: "0", base: "0", lg: "10" }}
             mt={{ md: "5rem", base: "7rem", lg: "auto" }}
           >
-            <About id={"about"} />
+            {/* <About name={"about"} /> */}
           </Box>
 
           {/* ----------Experience------- */}

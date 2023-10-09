@@ -1,12 +1,19 @@
-// CursorFollowingBackground.js
 import React, { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 
-const CursorFollowingBackground = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+interface CursorPosition {
+  x: number;
+  y: number;
+}
+
+const CursorFollowingBackground: React.FC = () => {
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
-    const handleMouseMove = (e:any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       setCursorPosition({ x: clientX, y: clientY });
     };
@@ -38,7 +45,7 @@ const CursorFollowingBackground = () => {
         style={{
           position: "absolute",
           mixBlendMode: "luminosity",
-          opacity: "0.1",
+          opacity: 0.1,
         }}
       />
     </Box>
