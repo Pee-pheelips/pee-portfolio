@@ -25,6 +25,7 @@ export default function RootLayout({
               maxW={{
                 md: "6xl",
                 lg: "7xl",
+                base: "container.xl",
               }}
               pt={{
                 base: "40px",

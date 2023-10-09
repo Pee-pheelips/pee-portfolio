@@ -17,7 +17,7 @@ export default function Home() {
         }}
       >
         <Box
-          width={{ base: "100%", md: "100%", lg: "30%" }}
+          width={{ base: "100%", md: "100%", lg: "28%" }}
           position={{ base: "relative", md: "relative", lg: "fixed" }}
         >
           <Hero />
