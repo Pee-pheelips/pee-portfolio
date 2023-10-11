@@ -18,7 +18,7 @@ export default function ExperienceCard() {
       position: "Frontend Engineer",
       company: "Cragpay",
       startDate: "2018",
-      endDate: "2022",
+      endDate: "PRESENT",
       tools: [
         "Typescript",
         "ChakraUI",
@@ -34,8 +34,8 @@ export default function ExperienceCard() {
     {
       position: "Frontend Developer",
       company: "Eduvacity",
-      startDate: "DEC '18",
-      endDate: "2022",
+      startDate: "JUL '23",
+      endDate: "SEP 23",
       tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
@@ -43,8 +43,8 @@ export default function ExperienceCard() {
     {
       position: "Frontend Engineer",
       company: "SurePlug",
-      startDate: "2018",
-      endDate: "2022",
+      startDate: "JUN 23",
+      endDate: "SEP 23",
       tools: ["PHP", "Bootstrap", "MySQL"],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
@@ -52,8 +52,8 @@ export default function ExperienceCard() {
     {
       position: "Frontend Engineer",
       company: "Pinnacle ICTs",
-      startDate: "2021",
-      endDate: "2022",
+      startDate: "APR 21",
+      endDate: "DEC 21",
       tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",

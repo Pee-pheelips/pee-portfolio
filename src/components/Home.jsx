@@ -9,22 +9,11 @@ import {
   Icon,
 } from "@chakra-ui/react";
 
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import MenuList from "./Navbar/Sidebar";
 
-const ListItems = [
-  { id: "about", title: "ABOUT" },
-  { id: "experience", title: "EXPERIENCE" },
-  { id: "project", title: "PROJECTS" },
-];
-
-export default function Home() {
+export default function Hero({ ListItems }) {
   const iconHover = { cursor: "pointer", color: "white" };
   return (
     <>
@@ -55,10 +44,7 @@ export default function Home() {
               </Text>
             </Box>
             <Box mt={"2"}>
-              <Text>
-                This book could not have happened the way it has without the
-                unique energies.
-              </Text>
+              <Text>Passionate about solving complex problems</Text>
             </Box>
             {/* ------------------sidebar-------------------- */}
             <Box>

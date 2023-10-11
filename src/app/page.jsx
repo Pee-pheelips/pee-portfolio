@@ -10,6 +10,11 @@ import Projects from "./projects/page";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  const ListItems = [
+    { id: "about", title: "ABOUT" },
+    { id: "experience", title: "EXPERIENCE" },
+    { id: "project", title: "PROJECTS" },
+  ];
   return (
     <>
       <Flex
@@ -24,7 +29,7 @@ export default function Home() {
           width={{ base: "100%", md: "100%", lg: "28%" }}
           position={{ base: "relative", md: "relative", lg: "fixed" }}
         >
-          <Hero />
+          <Hero ListItems={ListItems} />
         </Box>
         <Spacer />
         <Box
@@ -35,21 +40,26 @@ export default function Home() {
         >
           {/* About Section */}
           <Box
+            id={"about"}
             pl={{ md: "0", base: "0", lg: "10" }}
             mt={{ md: "5rem", base: "7rem", lg: "auto" }}
           >
             {/* <About name={"about"} /> */}
-            <About id={"about"} />
+            <About />
           </Box>
 
           {/* Experience Section */}
-          <Box marginTop={{ md: "7rem", base: "5rem" }}>
-            <Experience id="experience" />
+          <Box marginTop={{ md: "7rem", base: "5rem" }} id="experience">
+            <Experience />
           </Box>
 
           {/* Projects Section */}
-          <Box marginTop={{ md: "7rem", base: "5rem" }} mb={"2rem"}>
-            <Projects id="project" />
+          <Box
+            marginTop={{ md: "7rem", base: "5rem" }}
+            mb={"2rem"}
+            id="project"
+          >
+            <Projects />
           </Box>
 
           {/* Footer */}

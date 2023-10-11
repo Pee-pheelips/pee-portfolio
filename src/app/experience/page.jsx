@@ -3,10 +3,10 @@ import { Box } from "@chakra-ui/react";
 import ExperienceCard from "../../components/ExperienceCard";
 import HeadingNav from "../../components/Navbar/HeadingNav";
 
-const Experience = ({ id }) => {
+const Experience = () => {
   return (
     <>
-      <Box id={id}>
+      <Box>
         <HeadingNav name={"Experience"} />
         <ExperienceCard />
       </Box>

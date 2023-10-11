@@ -2,7 +2,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-
 export default function HeadingNav({ name }) {
   const [isSticky, setIsSticky] = useState(false);
 
@@ -28,7 +27,7 @@ export default function HeadingNav({ name }) {
   const backgroundColor = isSticky ? "rgba(0, 0, 30, 0.2)" : "transparent";
 
   return (
-    <Box display={{ base: "flex", md: "none", lg: "none" }}>
+    <Box display={{ base: "block", md: "none", lg: "none" }}>
       <div
         className="sticky-heading"
         style={{
