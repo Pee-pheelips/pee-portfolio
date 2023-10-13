@@ -17,7 +17,7 @@ export default function Hero({ ListItems }) {
   const iconHover = { cursor: "pointer", color: "white" };
   return (
     <>
-      <Box minH={{ lg: "50vh", base: "18vh", md: "18vh" }}>
+      <Box minH={{ lg: "40vh", base: "18vh", md: "18vh" }}>
         <Flex display={"column"} gap={"10px"}>
           <Box minH={{ md: "0", lg: "79vh", base: "0" }}>
             {" "}
@@ -40,7 +40,7 @@ export default function Hero({ ListItems }) {
                 color={"white"}
                 fontWeight={"semibold"}
               >
-                Front End Engineer at Cragpay
+                Front End Engineer
               </Text>
             </Box>
             <Box mt={"2"}>
@@ -54,7 +54,12 @@ export default function Hero({ ListItems }) {
           {/* ------------------socials-------------------- */}
           <Box bottom={"0"} mt={{ base: "8", md: "8", lg: "0" }}>
             <HStack gap={"20px"}>
-              <Icon as={FaEnvelope} _hover={iconHover} boxSize={7} />
+              <Icon
+                href="philipupaul@gmail.com"
+                as={FaEnvelope}
+                _hover={iconHover}
+                boxSize={7}
+              />
               <Icon as={FaGithub} _hover={iconHover} boxSize={7} />
               <Icon as={FaTwitter} _hover={iconHover} boxSize={7} />
               <Icon as={FaLinkedin} _hover={iconHover} boxSize={7} />

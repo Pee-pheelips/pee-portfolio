@@ -17,46 +17,53 @@ export default function ExperienceCard() {
     {
       position: "Frontend Engineer",
       company: "Cragpay",
-      startDate: "2018",
+      startDate: "2022",
       endDate: "PRESENT",
       tools: [
         "Typescript",
         "ChakraUI",
-        "NextJs",
+        "NextJS",
         "React",
         "AWS",
         "GraphQL",
         "Framer motion",
       ],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "Designed and managed the admin section, write product requirement document, collaborated with other engneers to modify and maintain the web applications.",
     },
     {
       position: "Frontend Developer",
       company: "Eduvacity",
       startDate: "JUL '23",
       endDate: "SEP 23",
-      tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
+      tools: ["Typescript", "NextJs", "ReactJs", "Tailwaind CSS", "JSON"],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "Team up with other engineers to improve code in Typescript and tailwind CSS Collaborated with the founder and product owner to help maintain and modify app responsiveness. Suggest and implement design concepts and ideas to foster development.",
     },
     {
       position: "Frontend Engineer",
       company: "SurePlug",
       startDate: "JUN 23",
       endDate: "SEP 23",
-      tools: ["PHP", "Bootstrap", "MySQL"],
+      tools: ["PHP", "Bootstrap", "Framer motion", "MySQL"],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "Join a team of engineers to build a marketplace as a solution to empowering artisans by giving them connections to customers. Support in the development process, business, and marketing. Write product documentation on new features (artisans and their referral system ).",
     },
     {
       position: "Frontend Engineer",
       company: "Pinnacle ICTs",
       startDate: "APR 21",
       endDate: "DEC 21",
-      tools: ["Typescript", "NextJs", "ReactJs", "JSON"],
+      tools: [
+        "Typescript",
+        "NextJS",
+        "ReactJS",
+        "ChakraUI",
+        "Apollo GraphQL",
+        "Figma",
+      ],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "Together with a team of engineers, championed building problem-solving products for different organizations and startups. Manage and mentor new interns and Industrial Training(I.T) students on web technologies and tools like ChakraUI, React, and Apollo graphQL. Manage the organization's activities and on-boarding new members by introducing them to their team and tasks.",
     },
   ];
   // Create an array of boolean states, one for each menu item

@@ -27,7 +27,7 @@ export default function HeadingNav({ name }) {
   const backgroundColor = isSticky ? "rgba(0, 0, 30, 0.2)" : "transparent";
 
   return (
-    <Box display={{ base: "block", md: "none", lg: "none" }}>
+    <Box display={{ md: "block", base: "block", lg: "none" }}>
       <div
         className="sticky-heading"
         style={{
@@ -47,7 +47,6 @@ export default function HeadingNav({ name }) {
           color={"white"}
           fontWeight={"semibold"}
           mb="1rem"
-          display={{ md: "block", base: "block", lg: "none" }}
         >
           {name}
         </Text>

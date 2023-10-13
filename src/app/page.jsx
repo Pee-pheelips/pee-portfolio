@@ -42,7 +42,7 @@ export default function Home() {
           <Box
             id={"about"}
             pl={{ md: "0", base: "0", lg: "10" }}
-            mt={{ md: "5rem", base: "7rem", lg: "auto" }}
+            mt={{ md: "5rem", base: "5rem", lg: "auto" }}
           >
             {/* <About name={"about"} /> */}
             <About />
