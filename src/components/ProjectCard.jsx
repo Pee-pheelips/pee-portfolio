@@ -7,26 +7,18 @@ import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 export default function ProjectCard() {
   const projects = [
     {
-      position: "Frontend Engineer",
+      position: "Tinder Clone",
       company: "Cragpay",
       img: "/cragpay.jpg",
-      tools: [
-        "Typescript",
-        "ChakraUI",
-        "NextJs",
-        "React",
-        "AWS",
-        "GraphQL",
-        "Framer motion",
-      ],
+      tools: ["NodeJS", "MaterialUI", "React"],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
     {
-      position: "Frontend Engineer",
+      position: "Slack Clone",
       company: "Cragpay",
       img: "/cragpay.jpg",
-
+      tools: ["ReactJS", "MaterialUI", "NextJs", ""],
       descripton:
         "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
     },
