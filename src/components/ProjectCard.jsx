@@ -8,7 +8,6 @@ export default function ProjectCard() {
   const projects = [
     {
       position: "Ramznetwork",
-      company: "PinnacleICTS",
       img: "/ramznetwork.jpg",
       tools: ["ChakraUI", "React", "NextJS", "GraphQL"],
       descripton:
@@ -16,7 +15,6 @@ export default function ProjectCard() {
     },
     {
       position: "Slack Clone",
-      company: "Cragpay",
       img: "/slackclone.png",
       tools: ["ReactJS", "MaterialUI", "Firebase", ""],
       descripton:
@@ -24,7 +22,6 @@ export default function ProjectCard() {
     },
     {
       position: "Text to Speech ",
-      company: "Cragpay",
       img: "/cragpay.jpg",
       tools: ["HTML", "CSS", "Javascript", "Web API"],
       descripton:
@@ -101,7 +98,7 @@ export default function ProjectCard() {
                   color={isHovered[index] ? "#12e193" : "white"}
                   display={"inline-flex"}
                 >
-                  {project.position} . {project.company}
+                  {project.position}
                   <Box
                     as="span"
                     pl={isHovered[index] ? 1.5 : 1}
