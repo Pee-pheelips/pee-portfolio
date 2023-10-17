@@ -43,7 +43,7 @@ export default function About() {
             {" "}
             high quality
           </Text>{" "}
-          software solutions to a wide range of clients and projects. I'm
+          software solutions to a wide range of clients and projects. I&apos;m
           committed to the relentless pursuit of excellence in this dynamic and
           ever-evolving field.
         </Text>
