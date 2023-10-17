@@ -36,7 +36,7 @@ export default function Home() {
           width={{ base: "100%", md: "100%", lg: "55%" }}
           fontSize={"lg"}
           mt={{ base: "0rem", md: "0" }}
-          position={"relative"}
+        
         >
           {/* About Section */}
           <Box

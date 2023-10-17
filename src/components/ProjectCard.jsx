@@ -7,52 +7,28 @@ import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 export default function ProjectCard() {
   const projects = [
     {
-      position: "Tinder Clone",
-      company: "Cragpay",
-      img: "/cragpay.jpg",
-      tools: ["NodeJS", "MaterialUI", "React"],
+      position: "Ramznetwork",
+      company: "PinnacleICTS",
+      img: "/ramznetwork.jpg",
+      tools: ["ChakraUI", "React", "NextJS", "GraphQL"],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "First project i built with Chakra, a responsive dashboard it with beautiful designs and color combinations ",
     },
     {
       position: "Slack Clone",
       company: "Cragpay",
-      img: "/cragpay.jpg",
-      tools: ["ReactJS", "MaterialUI", "NextJs", ""],
+      img: "/slackclone.png",
+      tools: ["ReactJS", "MaterialUI", "Firebase", ""],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "Mobile responsively designed SLACK, with basic features like creating channels, messaging, user authentication etc.",
     },
     {
-      position: "Frontend Engineer",
+      position: "Text to Speech ",
       company: "Cragpay",
       img: "/cragpay.jpg",
-      tools: [
-        "Typescript",
-        "ChakraUI",
-        "NextJs",
-        "React",
-        "AWS",
-        "GraphQL",
-        "Framer motion",
-      ],
+      tools: ["HTML", "CSS", "Javascript", "Web API"],
       descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
-    },
-    {
-      position: "Frontend Engineer",
-      company: "Cragpay",
-      img: "/cragpay.jpg",
-      tools: [
-        "Typescript",
-        "ChakraUI",
-        "NextJs",
-        "React",
-        "AWS",
-        "GraphQL",
-        "Framer motion",
-      ],
-      descripton:
-        "This job description template is designed to showcase your professional experience as a software engineer. Feel free to customize it by adding specific details, metrics, or achievements that highlight your unique contributions and skills.",
+        "A web application that converts text to speech using web text to speech API with different laguages and pitch control",
     },
   ];
   // Create an array of boolean states, one for each menu item
