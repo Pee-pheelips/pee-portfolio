@@ -9,6 +9,7 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { useState } from "react";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 
@@ -19,6 +20,7 @@ export default function ExperienceCard() {
       company: "Cragpay",
       startDate: "2022",
       endDate: "PRESENT",
+      link: "https://www.cragpay.com/",
       tools: [
         "Typescript",
         "ChakraUI",
@@ -36,6 +38,7 @@ export default function ExperienceCard() {
       company: "Eduvacity",
       startDate: "JUL '23",
       endDate: "SEP 23",
+      link: "https://www.eduvacity.com/",
       tools: ["Typescript", "NextJs", "ReactJs", "Tailwaind CSS", "JSON"],
       descripton:
         "Team up with other engineers to improve code in Typescript and tailwind CSS Collaborated with the founder and product owner to help maintain and modify app responsiveness. Suggest and implement design concepts and ideas to foster development.",
@@ -45,6 +48,7 @@ export default function ExperienceCard() {
       company: "SurePlug",
       startDate: "JUN 23",
       endDate: "SEP 23",
+      link: "https://mysureplug.com/",
       tools: ["PHP", "Bootstrap", "Framer motion", "MySQL"],
       descripton:
         "Join a team of engineers to build a marketplace as a solution to empowering artisans by giving them connections to customers. Support in the development process, business, and marketing. Write product documentation on new features (artisans and their referral system ).",
@@ -54,6 +58,7 @@ export default function ExperienceCard() {
       company: "Pinnacle ICTs",
       startDate: "APR 21",
       endDate: "DEC 21",
+      link: "https://www.linkedin.com/company/pinnacleicts/about/",
       tools: [
         "Typescript",
         "NextJS",
@@ -99,91 +104,93 @@ export default function ExperienceCard() {
               borderRadius: "10px",
             }}
           >
-            <Flex
-              gap={"9px"}
-              fontSize={"medium"}
-              flexDir={{ base: "column", md: "row" }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
-              cursor={isHovered[index] ? "pointer" : "none"}
-            >
-              <Box
-                w={{
-                  base: "full",
-                  md: "20%",
-                  lg: "20%",
-                }}
+            <Link href={experiences.link} passHref={true}>
+              <Flex
+                gap={"9px"}
+                fontSize={"medium"}
+                flexDir={{ base: "column", md: "row" }}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                cursor={isHovered[index] ? "pointer" : "none"}
               >
-                <Text
-                  mb={{
-                    base: "2",
-                    md: "0",
-                  }}
-                  color={isHovered[index] ? "gray.400" : "gray.500"}
-                  fontSize={{ base: "md", md: "sm" }}
-                  fontWeight={{
-                    base: "normal",
-                    md: "normal",
+                <Box
+                  w={{
+                    base: "full",
+                    md: "20%",
+                    lg: "20%",
                   }}
                 >
-                  {experiences.startDate} - {experiences.endDate}
-                </Text>
-              </Box>
-
-              <Box
-                width={{
-                  base: "100%",
-                  md: "75%",
-                }}
-              >
-                <Text
-                  as={"header"}
-                  fontWeight={"semibold"}
-                  fontSize={"lg"}
-                  color={isHovered[index] ? "#12e193" : "white"}
-                  display={"inline-flex"}
-                >
-                  {experiences.position} . {experiences.company}
-                  <Box
-                    as="span"
-                    pl={isHovered[index] ? 1.5 : 1}
-                    mt={isHovered[index] ? 0 : 1}
-                    mb={-2}
-                    verticalAlign={"middle"}
+                  <Text
+                    mb={{
+                      base: "2",
+                      md: "0",
+                    }}
+                    color={isHovered[index] ? "gray.400" : "gray.500"}
+                    fontSize={{ base: "md", md: "sm" }}
+                    fontWeight={{
+                      base: "normal",
+                      md: "normal",
+                    }}
                   >
-                    <Icon as={FiArrowUpRight} />
-                  </Box>
-                </Text>
+                    {experiences.startDate} - {experiences.endDate}
+                  </Text>
+                </Box>
 
-                <Text
-                  mt={"2"}
-                  mb="4"
-                  color={isHovered[index] ? "gray.400" : "gray.500"}
+                <Box
+                  width={{
+                    base: "100%",
+                    md: "75%",
+                  }}
                 >
-                  {experiences.descripton}
-                </Text>
-                <Flex gap={"5px"} wrap={"wrap"}>
-                  {experiences.tools?.map((tool, index) => (
+                  <Text
+                    as={"header"}
+                    fontWeight={"semibold"}
+                    fontSize={"lg"}
+                    color={isHovered[index] ? "#12e193" : "white"}
+                    display={"inline-flex"}
+                  >
+                    {experiences.position} . {experiences.company}
                     <Box
-                      key={index}
-                      w={"fit-content"}
-                      bgColor={"#112c3d"}
-                      px={"2"}
-                      borderRadius={"full"}
-                      py={1}
+                      as="span"
+                      pl={isHovered[index] ? 1.5 : 1}
+                      mt={isHovered[index] ? 0 : 1}
+                      mb={-2}
+                      verticalAlign={"middle"}
                     >
-                      <Text
-                        color={"#12e193"}
-                        fontSize={"sm"}
-                        fontWeight={"normal"}
-                      >
-                        {tool}
-                      </Text>
+                      <Icon as={FiArrowUpRight} />
                     </Box>
-                  ))}
-                </Flex>
-              </Box>
-            </Flex>
+                  </Text>
+
+                  <Text
+                    mt={"2"}
+                    mb="4"
+                    color={isHovered[index] ? "gray.400" : "gray.500"}
+                  >
+                    {experiences.descripton}
+                  </Text>
+                  <Flex gap={"5px"} wrap={"wrap"}>
+                    {experiences.tools?.map((tool, index) => (
+                      <Box
+                        key={index}
+                        w={"fit-content"}
+                        bgColor={"#112c3d"}
+                        px={"2"}
+                        borderRadius={"full"}
+                        py={1}
+                      >
+                        <Text
+                          color={"#12e193"}
+                          fontSize={"sm"}
+                          fontWeight={"normal"}
+                        >
+                          {tool}
+                        </Text>
+                      </Box>
+                    ))}
+                  </Flex>
+                </Box>
+              </Flex>
+            </Link>
           </Box>
         ))}
 
