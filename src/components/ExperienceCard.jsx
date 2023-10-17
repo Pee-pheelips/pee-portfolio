@@ -195,16 +195,18 @@ export default function ExperienceCard() {
         ))}
 
         <Box padding={{ lg: "5", base: "0" }} display={"flex"}>
-          <Text
-            fontWeight={"semibold"}
-            color={"white"}
-            display={"inline-flex"}
-            cursor={"pointer"}
-            _hover={{ borderBottom: "1px solid #12e193", marginRight: "1" }}
-          >
-            {" "}
-            View Full Resume
-          </Text>
+          <Link href={"/Philip-paul.pdf"} passHref target="_blank">
+            <Text
+              fontWeight={"semibold"}
+              color={"white"}
+              display={"inline-flex"}
+              cursor={"pointer"}
+              _hover={{ borderBottom: "1px solid #12e193", marginRight: "1" }}
+            >
+              {" "}
+              View Full Resume
+            </Text>
+          </Link>
           <Box
             as="span"
             verticalAlign={"middle"}

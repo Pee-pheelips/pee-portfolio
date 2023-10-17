@@ -12,6 +12,7 @@ import {
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import MenuList from "./Navbar/Sidebar";
+import Link from "next/link";
 
 export default function Hero({ ListItems }) {
   const iconHover = { cursor: "pointer", color: "white" };
@@ -54,15 +55,21 @@ export default function Hero({ ListItems }) {
           {/* ------------------socials-------------------- */}
           <Box bottom={"0"} mt={{ base: "8", md: "8", lg: "0" }}>
             <HStack gap={"20px"}>
-              <Icon
-                href="philipupaul@gmail.com"
-                as={FaEnvelope}
-                _hover={iconHover}
-                boxSize={7}
-              />
-              <Icon as={FaGithub} _hover={iconHover} boxSize={7} />
-              <Icon as={FaTwitter} _hover={iconHover} boxSize={7} />
-              <Icon as={FaLinkedin} _hover={iconHover} boxSize={7} />
+              <Link href="mailto:philipupaul@gmail.com">
+                <Icon as={FaEnvelope} _hover={iconHover} boxSize={7} />
+              </Link>
+              <Link href={"https://github.com/Pee-pheelips"} target="_blank">
+                <Icon as={FaGithub} _hover={iconHover} boxSize={7} />
+              </Link>
+              <Link href={"https://twitter.com/PPheelips"} target="_blank">
+                <Icon as={FaTwitter} _hover={iconHover} boxSize={7} />
+              </Link>
+              <Link
+                href={"https://www.linkedin.com/in/paul-philip-1a19121a3/"}
+                target="_blank"
+              >
+                <Icon as={FaLinkedin} _hover={iconHover} boxSize={7} />
+              </Link>
             </HStack>
           </Box>
         </Flex>
