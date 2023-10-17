@@ -104,7 +104,7 @@ export default function ExperienceCard() {
               borderRadius: "10px",
             }}
           >
-            <Link href={experiences.link} passHref={true}>
+            <Link href={experiences.link} passHref={true} target="_blank">
               <Flex
                 gap={"9px"}
                 fontSize={"medium"}
