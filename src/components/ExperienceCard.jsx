@@ -19,7 +19,7 @@ export default function ExperienceCard() {
       position: "Frontend Engineer",
       company: "Cragpay",
       startDate: "JAN' 22",
-      endDate: "NOV' 23",
+      endDate: "OCT' 23",
       link: "https://www.cragpay.com/",
       tools: [
         "Typescript",
