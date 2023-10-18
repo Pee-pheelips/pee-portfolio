@@ -19,7 +19,7 @@ export default function ExperienceCard() {
       position: "Frontend Engineer",
       company: "Cragpay",
       startDate: "2022",
-      endDate: "PRESENT",
+      endDate: "Nov 2023",
       link: "https://www.cragpay.com/",
       tools: [
         "Typescript",
@@ -195,7 +195,7 @@ export default function ExperienceCard() {
         ))}
 
         <Box padding={{ lg: "5", base: "0" }} display={"flex"}>
-          <Link href={"/Philip-paul.pdf"} passHref target="_blank">
+          <Link href={"/Philip-paul-resume.pdf"} passHref target="_blank">
             <Text
               fontWeight={"semibold"}
               color={"white"}
