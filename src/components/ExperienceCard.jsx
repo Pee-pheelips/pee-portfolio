@@ -18,8 +18,8 @@ export default function ExperienceCard() {
     {
       position: "Frontend Engineer",
       company: "Cragpay",
-      startDate: "2022",
-      endDate: "Nov 2023",
+      startDate: "JAN' 22",
+      endDate: "NOV' 23",
       link: "https://www.cragpay.com/",
       tools: [
         "Typescript",
@@ -37,7 +37,7 @@ export default function ExperienceCard() {
       position: "Frontend Developer",
       company: "Eduvacity",
       startDate: "JUL '23",
-      endDate: "SEP 23",
+      endDate: "SEP '23",
       link: "https://www.eduvacity.com/",
       tools: ["Typescript", "NextJs", "ReactJs", "Tailwaind CSS", "JSON"],
       descripton:
@@ -46,8 +46,8 @@ export default function ExperienceCard() {
     {
       position: "Frontend Engineer",
       company: "SurePlug",
-      startDate: "JUN 23",
-      endDate: "SEP 23",
+      startDate: "JUN '23",
+      endDate: "SEP '23",
       link: "https://mysureplug.com/",
       tools: ["PHP", "Bootstrap", "Framer motion", "MySQL"],
       descripton:
