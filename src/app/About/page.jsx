@@ -9,8 +9,7 @@ export default function About() {
         <HeadingNav name={"About"} />
         <Text>
           In late 2017, I decided to delve into the world of programming. I
-          found an opportunity to expand my knowledge and skills. I embarked on
-          this journey by joining{" "}
+          embarked on this journey by joining{" "}
           <Text as={"span"} color={"white"} fontWeight={"semibold"}>
             {" "}
             Cixel consulting
@@ -18,9 +17,7 @@ export default function About() {
           , where I learned about the basics of web design. As time progressed,
           in 2019 during my industrial training, I began to explore Python, with
           a particular focus on Django. <br />
-          However, 2020 brought about a major turning point when the COVID-19
-          pandemic led to lockdown. Shortly after this challenging period, I
-          joined{" "}
+          Shortly after the lockdown of the 2020 pandemic, I joined{" "}
           <Text as="span" color={"white"} fontWeight={"semibold"}>
             PinnacleICTs
           </Text>
