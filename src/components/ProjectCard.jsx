@@ -7,8 +7,25 @@ import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 
 export default function ProjectCard() {
   const projects = [
+     {
+      position: "Mollateral",
+      img: "/mollateral.png",
+      link: "https://www.mollateral.com/",
+      tools: ["React", "NextJS", "TailwindCSS", "Wagmi"],
+      descripton:
+        "Product Manager and Developer for Mollateral: the On-chain platform for secure credit",
+    },
     {
-      position: "Ramznetwork",
+      position: "EnovateLab",
+      img: "/enovateLab.png",
+      link: "https://enovatelab.vercel.app/",
+      tools: ["ChakraUI", "React", "NextJS", "GraphQL"],
+      descripton:
+        "Educational platform with support programs through mentorships and Investors",
+    },
+  {
+
+      position:"Ramznetwork",
       img: "/ramznetwork.jpg",
       link: "ramznetwork-client.vercel.app",
       tools: ["ChakraUI", "React", "NextJS", "GraphQL"],

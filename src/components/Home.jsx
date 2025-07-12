@@ -45,7 +45,9 @@ export default function Hero({ ListItems }) {
               </Text>
             </Box>
             <Box mt={"2"}>
-              <Text>Passionate about solving complex problems</Text>
+               <Text color="gray.300" fontSize="md">
+    Passionate about building intuitive interfaces and solving complex problems with clean, scalable code.
+  </Text>
             </Box>
             {/* ------------------sidebar-------------------- */}
             <Box>

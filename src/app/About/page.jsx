@@ -8,40 +8,42 @@ export default function About() {
       <Box>
         <HeadingNav name={"About"} />
         <Text>
-          In late 2017, I decided to delve into the world of programming. I
-          embarked on this journey by joining{" "}
-          <Text as={"span"} color={"white"} fontWeight={"semibold"}>
-            {" "}
-            Cixel consulting
-          </Text>{" "}
-          , where I learned about the basics of web design. As time progressed,
-          in 2019 during my industrial training, I began to explore Python, with
-          a particular focus on Django. <br />
-          Shortly after the lockdown of the 2020 pandemic, I joined{" "}
-          <Text as="span" color={"white"} fontWeight={"semibold"}>
+          In{" "}
+          <Text as="span"  fontWeight="semibold">
+            2020
+          </Text>
+          , I joined{" "}
+          <Text as="span" fontWeight="semibold">
             PinnacleICTs
           </Text>
-          , marking the beginning of my professional journey in the field of
-          software development. where I first got my{" "}
-          <Text as={"span"} color={"white"} fontWeight={"semibold"}>
-            {" "}
-            work experience
-          </Text>{" "}
-          . Fast-forward to today, and had the privilege of building software
-          for students, various start-ups, and other corporations. These
-          experiences have not only enriched my professional journey but have
-          equipped me to excel in advanced Javascript and React
+          , marking the official start of my professional career in software development. That experience gave me my first exposure to building production-level software and collaborating in a structured team environment.
         </Text>
-        <Text mt={"3"}>
-          {" "}
-          Today, I take immense pride in my ability to deliver{" "}
-          <Text as={"span"} color={"white"} fontWeight={"semibold"}>
-            {" "}
-            high quality
+
+        <Text mt="3">
+          Since then, I’ve had the opportunity to work on projects for{" "}
+          <Text as="span" fontWeight="">
+            students, startups, and corporate clients
+          </Text>
+          . These engagements have sharpened my expertise in{" "}
+          <Text as="span" color="white" fontWeight="semibold">
+            JavaScript, TypeScript
           </Text>{" "}
-          software solutions to a wide range of clients and projects. I&apos;m
-          committed to the relentless pursuit of excellence in this dynamic and
-          ever-evolving field.
+          and{" "}
+          <Text as="span" color="white" fontWeight="semibold">
+            React and NextJS
+          </Text>
+          , enabling me to deliver{" "}
+          <Text as="span" fontWeight="semibold">
+            scalable and high-quality solutions
+          </Text>{" "}
+          across various domains.
+        </Text>
+
+        <Text mt="3">
+          I am deeply passionate about continuous learning and take pride in my
+          ability to adapt and grow in this fast-paced industry. My focus
+          remains on building impactful, user-centered software while striving
+          for technical excellence.
         </Text>
       </Box>
     </>

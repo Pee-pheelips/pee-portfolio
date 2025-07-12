@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 
 const CursorFollowingBackground = () => {
-  const [cursorPosition, setCursorPosition] = useState({
-    x: 0,
-    y: 0,
-  });
+  const circleRef = useRef(null);
 
   useEffect(() => {
+    let animationFrameId;
+
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      setCursorPosition({ x: clientX, y: clientY });
+
+      // Smoothly animate position using requestAnimationFrame
+      animationFrameId = requestAnimationFrame(() => {
+        if (circleRef.current) {
+          circleRef.current.style.transform = `translate(${clientX - 500}px, ${
+            clientY - 500
+          }px)`;
+        }
+      });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -25,23 +33,21 @@ const CursorFollowingBackground = () => {
       position="fixed"
       top="0"
       left="0"
-      width="100%"
-      height="100%"
+      w="100%"
+      h="100%"
       pointerEvents="none"
+      zIndex={0}
     >
       <Box
-        width="1000px"
-        height="1000px"
-        borderRadius="50%"
-        background="radial-gradient(circle, #00ccff, #4169e1, #000024, #000020)"
-        transform={`translate(${cursorPosition.x - 500}px, ${
-          cursorPosition.y - 500
-        }px)`}
-        style={{
-          position: "absolute",
-          mixBlendMode: "luminosity",
-          opacity: 0.1,
-        }}
+        ref={circleRef}
+        w="1000px"
+        h="1000px"
+        borderRadius="full"
+        bg="radial-gradient(circle, #00ccff, #4169e1, #000024, #000020)"
+        position="absolute"
+        opacity={0.1}
+        mixBlendMode="luminosity"
+        willChange="transform"
       />
     </Box>
   );
