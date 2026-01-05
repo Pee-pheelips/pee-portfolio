@@ -9,8 +9,8 @@ const CursorFollowingBackground: React.FC = () => {
   // Use semantic tokens or color mode value
   // In light mode, a subtle gray or blue tint might be better than pure transparent
   const gradientColor = useColorModeValue(
-    "rgba(29, 78, 216, 0.05)", // Light mode: very subtle blue
-    "rgba(29, 78, 216, 0.15)"  // Dark mode: original effect
+    "rgba(29, 78, 216, 0.10)", // Light mode: slightly brighter
+    "rgba(29, 78, 216, 0.25)"  // Dark mode: brighter effect
   );
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
