@@ -54,12 +54,12 @@ const MenuList = ({ menuItems }) => {
   return (
     <Flex
       display={{ base: "none", md: "none", lg: "flex" }}
-      mt={"20"}
+      mt={"30"}
       flexDir={"column"}
       justifyContent={"space-evenly"}
       fontSize={"sm"}
       fontWeight={"bold"}
-      gap={4}
+      gap={10}
     >
       {menuItems.map((menuItem) => (
         <Flex
@@ -71,15 +71,15 @@ const MenuList = ({ menuItems }) => {
           onMouseEnter={() => setHoveredItem(menuItem.id)}
           onMouseLeave={() => setHoveredItem(null)}
         >
-          <HStack>
+          <HStack gap={10}>
             <Box
               as="div"
               bgColor={
                 activeMenuItem === menuItem.id
                   ? "white"
                   : hoveredItem === menuItem.id
-                  ? "white"
-                  : "gray.500"
+                    ? "white"
+                    : "gray.500"
               }
               width={
                 activeMenuItem === menuItem.id || hoveredItem === menuItem.id

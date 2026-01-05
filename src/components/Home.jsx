@@ -26,13 +26,13 @@ export default function Hero({ ListItems }) {
               <Heading
                 size={{
                   base: "xl",
-                  md: "2xl",
-                  lg: "3xl",
+                  md: "3xl",
+                  lg: "4xl",
                 }}
                 fontWeight={"bold"}
                 color={"#e2e8f0"}
               >
-                PHILIP PAUL
+                Paul Philip
               </Heading>
 
               <Text
@@ -45,9 +45,9 @@ export default function Hero({ ListItems }) {
               </Text>
             </Box>
             <Box mt={"2"}>
-               <Text color="gray.300" fontSize="md">
-    Passionate about building intuitive interfaces and solving complex problems with clean, scalable code.
-  </Text>
+              <Text color="gray.300" fontSize="md">
+                Passionate about building intuitive interfaces and solving complex problems with clean, scalable code.
+              </Text>
             </Box>
             {/* ------------------sidebar-------------------- */}
             <Box>

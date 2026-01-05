@@ -11,25 +11,25 @@ import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 export default function ExperienceCard() {
   const experience = [
     {
-  position: "Frontend Developer",
-  company: "EcoHotels",
-  startDate: "NOV '23",
-  endDate: "Present",
-  link: "https://www.ecohotels.com/",
-  tools: [
-    "TailwindCSS",
-    "TypeScript",
-    "Next.js",
-    "React",
-    "REST API",
-    "Framer Motion",
-    "React Native",
-    "Expo",
-  ],
-  description:
-    "Contributed as part of a collaborative frontend team to build and maintain the EcoHotels web application. Played a key role in implementing technical SEO strategies to improve site visibility and performance.",
-}
-,
+      position: "Frontend Developer",
+      company: "EcoHotels",
+      startDate: "NOV '23",
+      endDate: "Present",
+      link: "https://www.ecohotels.com/",
+      tools: [
+        "TailwindCSS",
+        "TypeScript",
+        "Next.js",
+        "React",
+        "REST API",
+        "Framer Motion",
+        "React Native",
+        "Expo",
+      ],
+      description:
+        "Contributed as part of a collaborative frontend team to build and maintain the EcoHotels web application. Played a key role in implementing technical SEO strategies to improve site visibility and performance.",
+    }
+    ,
     {
       position: "Frontend Engineer",
       company: "Cragpay",
