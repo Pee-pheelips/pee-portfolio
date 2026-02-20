@@ -31,7 +31,7 @@ export default function Hero() {
                     color="gray.200"
                     mt={3}
                 >
-                    Frontend Engineer
+                    Frontend & Mobile Engineer
                 </Text>
 
                 <Text
@@ -41,9 +41,7 @@ export default function Hero() {
                     maxW="sm"
                     lineHeight="tall"
                 >
-                    I build pixel-perfect, engaging, and accessible digital experiences. With a strong focus on engineering excellence, I architect scalable frontend systems that blend performance with aesthetic precision, delivering products that are not just functional but also delightful to use.
-                </Text>
-
+                    I build pixel-perfect, accessible digital experiences — architecting scalable frontend systems where performance meets aesthetic precision.        </Text>
                 <ScrollSpy menuItems={NAV_ITEMS} />
             </Box>
 

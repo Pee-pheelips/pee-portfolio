@@ -12,9 +12,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Philip Paul | Front End Engineer",
+  title: "Paul Philip | Frontend Engineer",
   description: "Passionate about building intuitive interfaces and solving complex problems with clean, scalable code.",
-  keywords: ["Front End Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
+  keywords: ["Frontend Engineer", "Mobile Engineer", "React", "React Native", "Next.js", "TypeScript", "Portfolio"],
 };
 
 export default function RootLayout({

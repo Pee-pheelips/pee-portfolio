@@ -37,9 +37,9 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const ABOUT_CONTENT = {
   paragraphs: [
-    "I am a Frontend Engineer with over 4 years of experience specializing in building resilient, high-performance web and mobile applications. My expertise lies at the intersection of architecture, design, and engineering, where I transform complex requirements into scalable UI systems using React and React Native.",
-    "Throughout my career, I have collaborated with startups and established organizations to deliver production-ready software. I focus on technical excellence, emphasizing type safety, modular component design, and efficient state management to ensure long-term maintainability and performance.",
-    "Beyond writing code, I am committed to engineering best practices, including detailed technical documentation and mentorship. I strive to bridge the gap between design vision and technical implementation, creating seamless user experiences that drive business value.",
+    "Frontend Engineer with 4+ years of experience building resilient, high-performance web and mobile applications — specializing at the intersection of architecture, design, and engineering using React and React Native.",
+    "I've worked with startups and established organizations to ship production-ready software, with a sharp focus on type safety, modular component design, and state management to keep systems maintainable as they scale.",
+    "I champion engineering best practices through documentation and mentorship, and take pride in bridging design intent with technical execution to deliver user experiences that are both thoughtful and impactful.",
   ],
 };
 
@@ -115,6 +115,24 @@ export const EXPERIENCES: Experience[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Rown",
+    img: "/rown.jpeg",
+    link: "https://rown.xyz/",
+    tools: [
+      "Typescript",
+      "React Native",
+      "Expo",
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "React-Native-Reanimated",
+      "React-Native-Passkey",
+    ],
+    description:
+      "Rown is a non-custodial crypto wallet that lets you send and spend stablecoins (USDC, USDT, DAI) as a single balance across chains, signed up with just a phone number, with full control of your funds.",
+  },
+
   {
     title: "Mollateral",
     img: "/mollateral.png",
