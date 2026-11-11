@@ -1,42 +1,53 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 
-const CursorFollowingBackground: React.FC = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  // Use semantic tokens or color mode value
-  // In light mode, a subtle gray or blue tint might be better than pure transparent
-  const gradientColor = useColorModeValue(
-    "rgba(29, 78, 216, 0.10)", // Light mode: slightly brighter
-    "rgba(29, 78, 216, 0.25)"  // Dark mode: brighter effect
+/**
+ * Soft spotlight that follows the cursor.
+ * Updates CSS variables directly instead of React state, so moving the mouse
+ * never re-renders the app. Disabled on touch devices.
+ */
+export default function CursorGlow() {
+  const ref = useRef<HTMLDivElement>(null);
+  const glow = useColorModeValue(
+    "radial-gradient(600px circle at var(--x, 50%) var(--y, 30%), rgba(16, 185, 129, 0.08), transparent 65%)",
+    "radial-gradient(600px circle at var(--x, 50%) var(--y, 30%), rgba(18, 225, 147, 0.07), transparent 65%)"
   );
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  }, []);
-
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+    const el = ref.current;
+    if (!el) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
+    let frame = 0;
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        el.style.setProperty("--x", `${e.clientX}px`);
+        el.style.setProperty("--y", `${e.clientY}px`);
+        el.style.opacity = "1";
+      });
     };
-  }, [handleMouseMove]);
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("mousemove", onMove);
+    };
+  }, []);
 
   return (
     <Box
+      ref={ref}
+      aria-hidden
       position="fixed"
-      top={0}
-      left={0}
-      width="100%"
-      height="100%"
+      inset={0}
       pointerEvents="none"
-      zIndex={-1}
-      background={`radial-gradient(600px at ${position.x}px ${position.y}px, ${gradientColor}, transparent 80%)`}
-      transition="background 0.2s"
+      zIndex={0}
+      opacity={0}
+      transition="opacity 0.6s ease"
+      background={glow}
     />
   );
-};
-
-export default CursorFollowingBackground;
+}

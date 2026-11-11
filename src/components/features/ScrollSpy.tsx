@@ -1,92 +1,65 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import { Box, Flex, Text, HStack } from "@chakra-ui/react";
+import React from "react";
+import { Box, Link, Text, HStack, List, ListItem } from "@chakra-ui/react";
 import { NavItem } from "@/types";
+import { useActiveSection } from "./useActiveSection";
 
 interface ScrollSpyProps {
-    menuItems: NavItem[];
+  menuItems: NavItem[];
 }
 
+/** Desktop section nav: real anchor links, keyboard accessible, highlights the section in view. */
 export default function ScrollSpy({ menuItems }: ScrollSpyProps) {
-    const [activeId, setActiveId] = useState<string>("about");
-    const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const activeId = useActiveSection(menuItems.map((m) => m.id));
 
-    useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: "-20% 0px -70% 0px", // Focus on the upper-middle of the viewport
-            threshold: 0,
-        };
-
-        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveId(entry.target.id);
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-        menuItems.forEach((item) => {
-            const element = document.getElementById(item.id);
-            if (element) observer.observe(element);
-        });
-
-        return () => observer.disconnect();
-    }, [menuItems]);
-
-    const scrollToSection = useCallback((id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            window.scrollTo({
-                top: element.offsetTop - 100, // Offset for better centering
-                behavior: "smooth",
-            });
-        }
-    }, []);
-
-    return (
-        <Flex
-            display={{ base: "none", lg: "flex" }}
-            mt={20}
-            flexDir="column"
-            gap={8}
-        >
-            {menuItems.map((item) => {
-                const isActive = activeId === item.id;
-                const isHovered = hoveredId === item.id;
-                const isHighlighted = isActive || isHovered;
-
-                return (
-                    <HStack
-                        key={item.id}
-                        spacing={4}
-                        cursor="pointer"
-                        onClick={() => scrollToSection(item.id)}
-                        onMouseEnter={() => setHoveredId(item.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                    >
-                        <Box
-                            w={isHighlighted ? "16" : "8"}
-                            h="1px"
-                            bg={isHighlighted ? "gray.100" : "gray.500"}
-                            transition="all 0.3s ease-in-out"
-                        />
-                        <Text
-                            fontSize="sm"
-                            fontWeight="bold"
-                            letterSpacing="widest"
-                            color={isHighlighted ? "gray.100" : "gray.500"}
-                            transition="all 0.3s ease-in-out"
-                            textTransform="uppercase"
-                        >
-                            {item.title}
-                        </Text>
-                    </HStack>
-                );
-            })}
-        </Flex>
-    );
+  return (
+    <Box
+      as="nav"
+      aria-label="Sections"
+      display={{ base: "none", lg: "block" }}
+      mt={12}
+      sx={{ "@media (max-height: 920px)": { marginTop: "2.25rem" } }}
+    >
+      <List spacing={2}>
+        {menuItems.map((item) => {
+          const isActive = activeId === item.id;
+          return (
+            <ListItem key={item.id}>
+              <Link
+                href={`#${item.id}`}
+                aria-current={isActive ? "location" : undefined}
+                display="inline-flex"
+                py={1.5}
+                className="group"
+                _hover={{ textDecoration: "none" }}
+              >
+                <HStack spacing={4}>
+                  <Box
+                    w={isActive ? "14" : "6"}
+                    h="2px"
+                    borderRadius="full"
+                    bg={isActive ? "accent.fg" : "border.default"}
+                    transition="all 0.3s ease"
+                    _groupHover={{ w: "14", bg: "fg.default" }}
+                  />
+                  <Text
+                    fontSize="xs"
+                    fontWeight="bold"
+                    letterSpacing="0.18em"
+                    textTransform="uppercase"
+                    color={isActive ? "fg.default" : "fg.muted"}
+                    transition="color 0.3s ease"
+                    _groupHover={{ color: "fg.default" }}
+                  >
+                    {item.title}
+                  </Text>
+                </HStack>
+              </Link>
+            </ListItem>
+          );
+        })}
+      </List>
+    </Box>
+  );
 }
